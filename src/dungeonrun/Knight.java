@@ -1,14 +1,12 @@
 package dungeonrun;
 
 public class Knight extends HeroesAbstract {
-    
-    private int initiative = 5;
-    private int health = 9;
-    private int attack = 6;
-    private int agility = 4;
 
-    @Override
-    public void stats() {
+    public Knight(int initiative, int health, int attack, int agility, String name) {
+        super(initiative, health, attack, agility, name);
+    }
+
+    public static void stats() {
 
         System.out.println("     _,.");
         System.out.println("    ,` -.)");
@@ -19,10 +17,10 @@ public class Knight extends HeroesAbstract {
         System.out.println("    |     || |        /  /");
         System.out.println("     `r-._||/   __   /  /      =============================");
         System.out.println(" __,-<_     )`-/  `./  /      | KNIGHT:                     |");
-        System.out.println("'  \\   `---'   \\   /  /       | Initiative: " + initiative +"               |");
-        System.out.println("    |           |./  /        | Health: " + health + "                   |");
-        System.out.println("    /           //  /         | Attack: " + attack + "                   |");
-        System.out.println("\\_/' \\         |/  /          | Agility: " + agility + "                  |");
+        System.out.println("'  \\   `---'   \\   /  /       | Initiative: 5               |");
+        System.out.println("    |           |./  /        | Health: 9                   |");
+        System.out.println("    /           //  /         | Attack: 6                   |");
+        System.out.println("\\_/' \\         |/  /          | Agility: 4                  |");
         System.out.println(" |    |   _,^-'/  /           | Special: Block first attack |");
         System.out.println(" |    , ``  (\\/  /_            =============================");
         System.out.println("  \\,.->._    \\X-=/^");
