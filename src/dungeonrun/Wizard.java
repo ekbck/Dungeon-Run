@@ -1,14 +1,12 @@
 package dungeonrun;
 
 public class Wizard extends HeroesAbstract{
-    
-    private int initiative = 6;
-    private int health = 4;
-    private int attack = 9;
-    private int agility = 5;
-    
-    @Override
-    public void stats() {
+
+    public Wizard(int initiative, int health, int attack, int agility, String name) {
+        super(initiative, health, attack, agility, name);
+    }
+
+    public static void stats() {
  
         System.out.println("                    ____ ");
         System.out.println("                  .'* *.'");
