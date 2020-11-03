@@ -1,14 +1,12 @@
 package dungeonrun;
 
 public class Thief extends HeroesAbstract {
-    
-    private int initiative = 7;
-    private int health = 5;
-    private int attack = 5;
-    private int agility = 7;
 
-    @Override
-    public void stats() {
+    public Thief(int initiative, int health, int attack, int agility, String name) {
+        super(initiative, health, attack, agility, name);
+    }
+
+    public static void stats() {
         
         System.out.println("THIEF:");
         System.out.println("Initiative: 7");
