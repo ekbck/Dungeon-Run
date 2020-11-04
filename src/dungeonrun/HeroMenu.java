@@ -22,8 +22,8 @@ public class HeroMenu {
 
         if (userInput == 1) {
             Knight.stats();
-            int confirm = confirmHero();
-            if (confirm == 1) {
+            boolean confirm = confirmHero();
+            if (confirm == true) {
                 String name = name();
                 HeroesAbstract knight = new Knight(5, 9, 6, 4, name);
                 stats.add(knight);
@@ -33,8 +33,8 @@ public class HeroMenu {
 
         } else if (userInput == 2) {
             Wizard.stats();
-            int confirm = confirmHero();
-            if (confirm == 1) {
+            boolean confirm = confirmHero();
+            if (confirm == true) {
                 String name = name();
                 HeroesAbstract wizard = new Wizard(5, 9, 6, 4, name);
                 stats.add(wizard);
@@ -43,8 +43,8 @@ public class HeroMenu {
             }
         } else if (userInput == 3) {
             Thief.stats();
-            int confirm = confirmHero();
-            if (confirm == 1) {
+            boolean confirm = confirmHero();
+            if (confirm == true) {
                 String name = name();
                 HeroesAbstract thief = new Thief(5, 9, 6, 4, name);
                 stats.add(thief);
@@ -54,7 +54,7 @@ public class HeroMenu {
         } else {
             System.out.println("Error! Choose 1, 2 or 3!");
             chooseHero();
-            
+
         }
 
 //        switch (userInput) {
@@ -116,7 +116,7 @@ public class HeroMenu {
         System.out.println(" ================================= ");
     }
 
-    public static int confirmHero() {
+    public static boolean confirmHero() {
 
         System.out.println("\nContinue? \n1. Yes \n2. No");
 
@@ -126,10 +126,10 @@ public class HeroMenu {
         while (true) {
             switch (userInput) {
                 case 1:
-                    return 1;
+                    return true;
                 case 2:
-                    chooseHero();
-                    break;
+                    return false;
+                    
                 default:
                     System.out.println("Error! Choose 1 or 2");
                     break;
