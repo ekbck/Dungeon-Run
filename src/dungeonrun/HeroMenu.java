@@ -20,53 +20,90 @@ public class HeroMenu {
         int userInput = sc.nextInt();
         sc.nextLine();
 
-        switch (userInput) {
-            case 1:
-                Knight.stats();
-                int confirmK = confirmHero();
-                String nameK = "";
-
-                if (confirmK != 1) {
-                    break;
-                } else {
-                    nameK = name();
-                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameK);
-                    stats.add(knight);
-                    break;
-                }
-
-            case 2:
-                Wizard.stats();
-                int confirmW = confirmHero();
-                String nameW = "";
-
-                if (confirmW != 1) {
-                    break;
-                } else {
-                    nameW = name();
-                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameW);
-                    stats.add(knight);
-                    break;
-                }
-
-            case 3:
-                Thief.stats();
-                int confirmT = confirmHero();
-                String nameT = "";
-
-                if (confirmT != 1) {
-                    break;
-                } else {
-                    nameT = name();
-                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameT);
-                    stats.add(knight);
-                    break;
-                }
-
-            default:
-                System.out.println("ERROR! Please enter 1, 2 or 3");
+        if (userInput == 1) {
+            Knight.stats();
+            int confirm = confirmHero();
+            if (confirm == 1) {
+                String name = name();
+                HeroesAbstract knight = new Knight(5, 9, 6, 4, name);
+                stats.add(knight);
+            } else {
                 chooseHero();
+            }
+
+        } else if (userInput == 2) {
+            Wizard.stats();
+            int confirm = confirmHero();
+            if (confirm == 1) {
+                String name = name();
+                HeroesAbstract wizard = new Wizard(5, 9, 6, 4, name);
+                stats.add(wizard);
+            } else {
+                chooseHero();
+            }
+        } else if (userInput == 3) {
+            Thief.stats();
+            int confirm = confirmHero();
+            if (confirm == 1) {
+                String name = name();
+                HeroesAbstract thief = new Thief(5, 9, 6, 4, name);
+                stats.add(thief);
+            } else {
+                chooseHero();
+            }
+        } else {
+            System.out.println("Error! Choose 1, 2 or 3!");
+            chooseHero();
+            
         }
+
+//        switch (userInput) {
+//            case 1:
+//                Knight.stats();
+//                int confirmK = confirmHero();
+//                String nameK = "";
+//
+//                if (confirmK != 1) {
+//                    break;
+//                } else {
+//                    nameK = name();
+//                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameK);
+//                    stats.add(knight);
+//                    break;
+//                }
+//
+//            case 2:
+//                Wizard.stats();
+//                int confirmW = confirmHero();
+//                String nameW = "";
+//
+//                if (confirmW != 1) {
+//                    break;
+//                } else {
+//                    nameW = name();
+//                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameW);
+//                    stats.add(knight);
+//                    break;
+//                }
+//
+//            case 3:
+//                Thief.stats();
+//                int confirmT = confirmHero();
+//                String nameT = "";
+//
+//                if (confirmT != 1) {
+//                    break;
+//                } else {
+//                    nameT = name();
+//                    HeroesAbstract knight = new Knight(5, 9, 6, 4, nameT);
+//                    stats.add(knight);
+//                    break;
+//                }
+//
+//            default:
+//                System.out.println("ERROR! Please enter 1, 2 or 3");
+//                chooseHero();
+//        }
     }
 
     public static void loadCharacter() {
@@ -92,6 +129,7 @@ public class HeroMenu {
                     return 1;
                 case 2:
                     chooseHero();
+                    break;
                 default:
                     System.out.println("Error! Choose 1 or 2");
                     break;
