@@ -26,36 +26,42 @@ public class HeroMenu {
                 int confirmK = confirmHero();
                 String nameK = "";
 
-                if (confirmK == 1) {
+                if (confirmK != 1) {
+                    break;
+                } else {
                     nameK = name();
                     HeroesAbstract knight = new Knight(5, 9, 6, 4, nameK);
                     stats.add(knight);
+                    break;
                 }
-                break;
 
             case 2:
                 Wizard.stats();
                 int confirmW = confirmHero();
                 String nameW = "";
 
-                if (confirmW == 1) {
+                if (confirmW != 1) {
+                    break;
+                } else {
                     nameW = name();
                     HeroesAbstract knight = new Knight(5, 9, 6, 4, nameW);
                     stats.add(knight);
+                    break;
                 }
-                break;
 
             case 3:
                 Thief.stats();
                 int confirmT = confirmHero();
                 String nameT = "";
 
-                if (confirmT == 1) {
+                if (confirmT != 1) {
+                    break;
+                } else {
                     nameT = name();
                     HeroesAbstract knight = new Knight(5, 9, 6, 4, nameT);
                     stats.add(knight);
+                    break;
                 }
-                break;
 
             default:
                 System.out.println("ERROR! Please enter 1, 2 or 3");
@@ -75,14 +81,22 @@ public class HeroMenu {
 
     public static int confirmHero() {
 
-        System.out.println("\nContinue? y/n");
+        System.out.println("\nContinue? \n1. Yes \n2. No");
 
-        String userInput = sc.nextLine();
+        int userInput = sc.nextInt();
+        sc.nextLine();
 
-        if (!userInput.equalsIgnoreCase("y")) {
-            chooseHero();
+        while (true) {
+            switch (userInput) {
+                case 1:
+                    return 1;
+                case 2:
+                    chooseHero();
+                default:
+                    System.out.println("Error! Choose 1 or 2");
+                    break;
+            }
         }
-        return 1;
 
     }
 
